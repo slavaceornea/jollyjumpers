@@ -14,10 +14,10 @@ import java.util.regex.Pattern;
  * instance, 1 4 2 3 is a jolly jumper, because the absolute diﬀerences are 3, 2, and 1, respectively.
  * The deﬁnition implies that any sequence of a single integer is a jolly jumper. Write a program
  * to determine whether each sequence is a jolly jumper.
-
+ *
  * Input
  * A line of input contains n integers representing the sequence.
-
+ *
  * Output
  * For a line of input generate a line of output saying “Jolly” or “Not jolly”.
  * 
@@ -31,6 +31,13 @@ import java.util.regex.Pattern;
  * 
  * Sample Output
  * Not jolly
+ * 
+ * Solution :
+ * We need to concentrate on the fact that difference in consecutive numbers should cover all number from 1 to n-1.
+ * The heart of solution is in selecting a data structure who's value at an index corresponding to the i (1 <= i < n) will be set
+ * if absolute value of difference between consecutive numbers is i. Absolute values of differences will fail to cover
+ * the range of 1 to n-1 if any of the difference value is repeated or any of the difference will fall out side the range
+ * of 1 to n-1 and there will be no need to check for the numbers further.
  * 
  * Code comment
  * Method IsJollyJumpers in this class returns true when the absolute values of the differences
